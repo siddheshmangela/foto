@@ -22,7 +22,7 @@
   @media only screen and (min-width: 1100px) {
     header {
       margin-top: var(--unit-5);
-      margin-bottom: var(--unit-7);
+      margin-bottom: var(--unit-6);
     }
   }
 </style>

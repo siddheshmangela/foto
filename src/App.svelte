@@ -2,8 +2,10 @@
   import imagesList from './images-list';
   import Image from './components/Image.svelte';
   import Header from './components/TheHeader.svelte';
+  import Footer from './components/TheFooter.svelte';
 
-  const firstImage = imagesList.pop();
+  const firstImage = imagesList[0];
+  imagesList.shift();
 </script>
 
 <div class="App">
@@ -12,6 +14,7 @@
   {#each imagesList as image}
     <Image {image} />
   {/each}
+  <Footer />
 </div>
 
 <style>
@@ -19,6 +22,7 @@
     min-height: 100vh;
     background-color: var(--color-black);
     padding-top: var(--unit-4);
+    padding-bottom: var(--unit-8);
   }
 
   @media only screen and (min-width: 1100px) {

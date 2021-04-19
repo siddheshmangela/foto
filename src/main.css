@@ -16,6 +16,7 @@ body {
 
 :root {
   --color-black: #000;
+  --color-grey-40: #afafaf;
   --color-grey-50: #8c8c8c;
 
   --unit-1\4: 2px;

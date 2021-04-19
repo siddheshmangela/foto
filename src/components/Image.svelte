@@ -7,28 +7,21 @@
 <style>
   .image {
     width: 100%;
-    height: 250px;
+    height: auto;
     display: block;
     object-fit: contain;
     margin: 0 auto;
-    margin-bottom: var(--unit-1\2);
-  }
-
-  @media only screen and (min-width: 640px) {
-    .image {
-      height: 600px;
-    }
+    margin-bottom: var(--unit-2);
   }
 
   @media only screen and (min-width: 1100px) {
     .image {
-      max-width: 950px;
-      height: auto;
-      margin-bottom: var(--unit-7);
+      max-width: 930px;
+      margin-bottom: var(--unit-5);
     }
 
     .image:first-child {
-      max-width: 1000px;
+      max-width: 1050px;
       margin-bottom: 0;
     }
   }
