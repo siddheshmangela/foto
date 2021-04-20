@@ -1,12 +1,12 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: "/",
-    src: "/dist",
+    public: '/',
+    src: '/dist',
   },
   plugins: [
     /* ... */
-    "@snowpack/plugin-svelte",
+    '@snowpack/plugin-svelte',
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
@@ -15,6 +15,7 @@ module.exports = {
   optimize: {
     /* Example: Bundle your final build: */
     // "bundle": true,
+    minify: true,
   },
   packageOptions: {
     /* ... */
@@ -23,7 +24,7 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
-    baseUrl: "/foto",
-    metaUrlPath: "/dist",
+    baseUrl: '/foto',
+    metaUrlPath: '/dist',
   },
 };
