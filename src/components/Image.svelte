@@ -2,7 +2,12 @@
   export let image;
 </script>
 
-<img src={image.image} alt={image.name} loading="lazy" class="image" />
+<img
+  src={`images/${image.image}`}
+  alt={image.name}
+  loading="lazy"
+  class="image"
+/>
 
 <style>
   .image {
