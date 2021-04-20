@@ -17,6 +17,11 @@
     object-fit: contain;
     margin: 0 auto;
     margin-bottom: var(--unit-2);
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
   }
 
   @media only screen and (min-width: 1100px) {
