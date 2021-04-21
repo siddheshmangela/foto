@@ -1,38 +1,48 @@
+import backRoomAjanta from './images/DSC_0154-tagged-202104162011.jpg';
+import walkTheWalk from './images/DSC_0550-edit-c-202104162011.jpg';
+import pyramid from './images/DSC_0108-Edit-tagged-202104162011.jpg';
+import manInAby from './images/DSC_0225-edit-202104162011.jpg';
+import gallary from './images/DSC_0642-Edit-edit-202104162011.jpg';
+import washOrVanish from './images/DSC_1745-Edit-edit-c-202104162011.jpg';
+import angkorHdr from './images/DSC_7559-HDR-tagged-202104162011.jpg';
+import gateOfTheDeadBargin from './images/DSC_7876-Pano-Edit-Edit-edit-tagged-202104162011.jpg';
+import watBuddha from './images/DSC_8220-tagged-202104162011.jpg';
+
 export default [
   {
     name: 'backRoom Ajanta',
-    image: 'DSC_0154-tagged.jpg',
+    image: backRoomAjanta,
   },
   {
     name: 'Gate Of The Dead Bargin',
-    image: 'DSC_7876-Pano-Edit-Edit-edit-tagged.jpg',
+    image: gateOfTheDeadBargin,
   },
   {
     name: 'man In Aby',
-    image: 'DSC_0225-edit.jpg',
+    image: manInAby,
   },
   {
     name: 'washOrVanish',
-    image: 'DSC_1745-Edit-edit-c.jpg',
+    image: washOrVanish,
   },
   {
     name: 'pyramid',
-    image: 'DSC_0108-Edit-tagged.jpg',
+    image: pyramid,
   },
   {
     name: 'walk The Walk',
-    image: 'DSC_0550-edit-c.jpg',
+    image: walkTheWalk,
   },
   {
     name: 'Wat Buddha',
-    image: 'DSC_8220-tagged.jpg',
+    image: watBuddha,
   },
   {
     name: 'gallary',
-    image: 'DSC_0642-Edit-edit.jpg',
+    image: gallary,
   },
   {
     name: 'angkor HDR',
-    image: 'DSC_7559-HDR-tagged.jpg',
+    image: angkorHdr,
   },
 ];

@@ -1,12 +1,8 @@
 <script>
   export let image;
-  export let show;
-  export let loading;
 </script>
 
-{#if show}
-  <img src={`images/${image.image}`} alt={image.name} {loading} class="image" />
-{/if}
+<img src={image.image} alt={image.name} loading="lazy" class="image" />
 
 <style>
   .image {
