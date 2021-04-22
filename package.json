@@ -13,7 +13,7 @@
     "eslint-plugin-svelte3": "^3.1.2",
     "prettier": "^2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
-    "snowpack": "^3.0.1"
+    "snowpack": "^3.3.5"
   },
   "dependencies": {
     "svelte": "^3.37.0"
