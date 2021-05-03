@@ -1,8 +1,35 @@
 <script>
   export let image;
+
+  let imageSrc = image.image;
+
+  const imageLoader = (src) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+      }, 2000);
+    });
+  };
+
+  const handleAfterImageLoad = async () => {
+    const filenameArray = imageSrc.split('/');
+    const fileName = filenameArray[filenameArray.length - 1];
+    const { src = '' } = await imageLoader(`/images/${fileName}`);
+
+    imageSrc = src;
+  };
 </script>
 
-<img src={image.image} alt={image.name} loading="lazy" class="image" />
+<img
+  src={imageSrc}
+  alt={image.name}
+  loading="lazy"
+  class="image"
+  on:load={handleAfterImageLoad}
+/>
 
 <style>
   .image {
