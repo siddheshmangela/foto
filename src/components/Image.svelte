@@ -1,25 +1,14 @@
 <script>
+  import { publicPath } from '../utils';
   export let image;
 
   let imageSrc = image.image;
 
-  const publicPath = import.meta.env.MODE === 'development' ? '' : '/foto';
-
-  const imageLoader = (src) => {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-    });
-  };
-
-  const handleAfterImageLoad = async () => {
+  const handleAfterImageLoad = () => {
     const filenameArray = image.image.split('/');
     const fileName = filenameArray[filenameArray.length - 1];
-    const { src = '' } = await imageLoader(`${publicPath}/images/${fileName}`);
 
-    imageSrc = src;
+    imageSrc = `${publicPath}/images/${fileName}`;
   };
 </script>
 
