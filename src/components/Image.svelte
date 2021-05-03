@@ -1,24 +1,33 @@
 <script>
-  import { publicPath } from '../utils';
+  import { isDev } from '../utils';
   export let image;
 
-  let imageSrc = image.image;
+  const getImageUrl = (config = '') => {
+    // if (isDev) {
+    //   return `/images/${image.image}`;
+    // }
 
-  const handleAfterImageLoad = () => {
-    const filenameArray = image.image.split('/');
-    const fileName = filenameArray[filenameArray.length - 1];
-
-    imageSrc = `${publicPath}/images/${fileName}`;
+    return `https://cdn.statically.io/img/siddheshmangela.github.io/f=auto${
+      config ? `,${config}` : ''
+    }/foto/images/${image.image}`;
   };
+
+  const detectIfMobile = () => {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      )
+    ) {
+      return true;
+    }
+
+    return false;
+  };
+
+  const imageSrc = detectIfMobile() ? getImageUrl('w=750') : getImageUrl();
 </script>
 
-<img
-  src={imageSrc}
-  alt={image.name}
-  loading="lazy"
-  class="image"
-  on:load={handleAfterImageLoad}
-/>
+<img src={imageSrc} alt={image.name} loading="lazy" class="image" />
 
 <style>
   .image {
@@ -33,12 +42,14 @@
     image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
     image-rendering: crisp-edges;
     -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    min-height: 300px;
   }
 
   @media only screen and (min-width: 1100px) {
     .image {
       max-width: 930px;
       margin-bottom: var(--unit-5);
+      min-height: 600px;
     }
 
     .image:first-child {

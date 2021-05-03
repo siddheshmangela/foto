@@ -1,5 +1,5 @@
 <script>
-  import imagesList from './images-list';
+  import imagesList from './images-list.json';
   import Image from './components/Image.svelte';
   import Header from './components/TheHeader.svelte';
   import Footer from './components/TheFooter.svelte';
