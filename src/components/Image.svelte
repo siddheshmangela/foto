@@ -1,8 +1,35 @@
 <script>
   export let image;
+
+  let imageSrc = image.image;
+
+  const publicPath = import.meta.env.MODE === 'development' ? '' : '/foto';
+
+  const imageLoader = (src) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+    });
+  };
+
+  const handleAfterImageLoad = async () => {
+    const filenameArray = image.image.split('/');
+    const fileName = filenameArray[filenameArray.length - 1];
+    const { src = '' } = await imageLoader(`${publicPath}/images/${fileName}`);
+
+    imageSrc = src;
+  };
 </script>
 
-<img src={image.image} alt={image.name} loading="lazy" class="image" />
+<img
+  src={imageSrc}
+  alt={image.name}
+  loading="lazy"
+  class="image"
+  on:load={handleAfterImageLoad}
+/>
 
 <style>
   .image {
