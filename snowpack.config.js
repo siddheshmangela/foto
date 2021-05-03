@@ -18,9 +18,6 @@ module.exports = {
   ],
   optimize: {
     /* Example: Bundle your final build: */
-    bundle: true,
-    minify: true,
-    sourcemap: false,
   },
   packageOptions: {
     /* ... */
