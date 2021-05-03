@@ -1,7 +1,7 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
+const imagesList = require('./src/images-list.json');
 
-const FIRST_IMAGE = 'DSC_0154-tagged.jpg';
-const SECOND_IMAGE = 'DSC_7876-Pano-Edit-Edit-edit-tagged.jpg';
+const FIRST_IMAGE = imagesList[0].image;
 
 module.exports = {
   mount: {
@@ -27,7 +27,6 @@ module.exports = {
   },
   env: {
     FIRST_IMAGE,
-    SECOND_IMAGE,
   },
   buildOptions: {
     baseUrl: '/foto',
