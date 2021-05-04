@@ -1,33 +1,31 @@
 <script>
-  import { isDev } from '../utils';
+  import { imageCdnUrl, detectIfMobile } from '../utils';
   export let image;
 
   const getImageUrl = (config = '') => {
-    // if (isDev) {
-    //   return `/images/${image.image}`;
-    // }
+    const imageConfig = config ? `,${config}` : '';
 
-    return `https://cdn.statically.io/img/siddheshmangela.github.io/f=auto${
-      config ? `,${config}` : ''
-    }/foto/images/${image.image}`;
+    return `${imageCdnUrl}${imageConfig}/foto/images/${image.image}`;
   };
 
-  const detectIfMobile = () => {
-    if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent,
-      )
-    ) {
-      return true;
+  let imageSrc = detectIfMobile() ? getImageUrl('w=750') : getImageUrl();
+
+  const handleImageError = (src = '') => {
+    if (src && src.startsWith(imageCdnUrl)) {
+      imageSrc = `/images/${image.image}`;
     }
 
-    return false;
+    return;
   };
-
-  const imageSrc = detectIfMobile() ? getImageUrl('w=750') : getImageUrl();
 </script>
 
-<img src={imageSrc} alt={image.name} loading="lazy" class="image" />
+<img
+  src={imageSrc}
+  alt={image.name}
+  loading="lazy"
+  class="image"
+  on:error={() => handleImageError(imageSrc)}
+/>
 
 <style>
   .image {

@@ -2,6 +2,7 @@
 const imagesList = require('./src/images-list.json');
 
 const FIRST_IMAGE = imagesList[0].image;
+const IMAGE_CDN = 'https://cdn.statically.io/img/siddheshmangela.github.io';
 
 module.exports = {
   mount: {
@@ -27,6 +28,7 @@ module.exports = {
   },
   env: {
     FIRST_IMAGE,
+    IMAGE_CDN,
   },
   buildOptions: {
     baseUrl: '/foto',
