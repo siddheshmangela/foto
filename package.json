@@ -4,6 +4,7 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
+    "serve": "lite-server -c lite-server-config.json",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1"
   },
   "devDependencies": {
@@ -11,6 +12,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.24.0",
     "eslint-plugin-svelte3": "^3.1.2",
+    "lite-server": "^2.6.1",
     "prettier": "^2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "snowpack": "^3.3.5"

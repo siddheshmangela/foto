@@ -1,7 +1,6 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
-const imagesList = require('./src/images-list.json');
 
-const FIRST_IMAGE = imagesList[0].image;
+const FIRST_IMAGE = 'DSC_0154-tagged.jpg';
 const IMAGE_CDN = 'https://cdn.statically.io/img/siddheshmangela.github.io';
 
 module.exports = {
@@ -19,6 +18,10 @@ module.exports = {
   ],
   optimize: {
     /* Example: Bundle your final build: */
+    bundle: true,
+    minify: true,
+    splitting: true,
+    sourcemap: false,
   },
   packageOptions: {
     /* ... */
