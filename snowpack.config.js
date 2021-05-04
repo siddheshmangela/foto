@@ -1,7 +1,7 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 
-const FIRST_IMAGE = 'DSC_0154-tagged.jpg';
 const IMAGE_CDN = 'https://cdn.statically.io/img/siddheshmangela.github.io';
+const COVER_IMAGE = `${IMAGE_CDN}/foto/images/DSC_0154-tagged.jpg`;
 
 module.exports = {
   mount: {
@@ -30,8 +30,8 @@ module.exports = {
     /* ... */
   },
   env: {
-    FIRST_IMAGE,
     IMAGE_CDN,
+    COVER_IMAGE,
   },
   buildOptions: {
     baseUrl: '/foto',
