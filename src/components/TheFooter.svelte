@@ -11,4 +11,10 @@
     letter-spacing: 0.6px;
     font-family: serif;
   }
+
+  @media only screen and (min-width: 1100px) {
+    footer {
+      font-size: 1.3rem;
+    }
+  }
 </style>

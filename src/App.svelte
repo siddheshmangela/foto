@@ -3,6 +3,7 @@
   import Image from './components/Image.svelte';
   import Header from './components/TheHeader.svelte';
   import Footer from './components/TheFooter.svelte';
+  import ContactBar from './components/ContactBar.svelte';
 
   const firstImage = imagesList[0];
   imagesList.shift();
@@ -15,6 +16,7 @@
     <Image {image} />
   {/each}
   <Footer />
+  <ContactBar />
 </div>
 
 <style>
@@ -22,7 +24,7 @@
     min-height: 100vh;
     background-color: var(--color-black);
     padding-top: var(--unit-4);
-    padding-bottom: var(--unit-8);
+    padding-bottom: var(--unit-4);
   }
 
   @media only screen and (min-width: 1100px) {

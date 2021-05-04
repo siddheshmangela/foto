@@ -1,12 +1,16 @@
 <script>
   import InstagramIcon from './icons/Instagram.svelte';
-  import AnchorButton from './AnchorButton.svelte';
+  import Anchor from './Anchor.svelte';
 </script>
 
 <header>
-  <AnchorButton href="https://www.instagram.com/sidthecool007" target="_blank">
+  <Anchor
+    href="https://www.instagram.com/sidthecool007"
+    target="_blank"
+    iconButton={true}
+  >
     <InstagramIcon />
-  </AnchorButton>
+  </Anchor>
 </header>
 
 <style>
