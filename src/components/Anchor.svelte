@@ -4,7 +4,13 @@
   export let iconButton;
 </script>
 
-<a class="anchor" class:icon={iconButton} {href} {target}>
+<a
+  class="anchor"
+  rel="noreferrer nofollow"
+  class:icon={iconButton}
+  {href}
+  {target}
+>
   <slot />
 </a>
 
