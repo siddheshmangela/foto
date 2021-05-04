@@ -9,7 +9,7 @@
   imagesList.shift();
 </script>
 
-<div class="App">
+<main class="App">
   <Image image={firstImage} />
   <Header />
   {#each imagesList as image}
@@ -17,7 +17,7 @@
   {/each}
   <Footer />
   <ContactBar />
-</div>
+</main>
 
 <style>
   .App {
