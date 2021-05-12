@@ -6,7 +6,7 @@ export default [
   },
   {
     id: 'unsplash',
-    name: 'siddacool',
+    name: '@siddacool',
     href: 'https://unsplash.com/@siddacool',
   },
   {
