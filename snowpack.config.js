@@ -20,7 +20,7 @@ module.exports = {
     /* Example: Bundle your final build: */
     bundle: true,
     minify: true,
-    splitting: true,
+    // splitting: true,
     sourcemap: false,
   },
   packageOptions: {
