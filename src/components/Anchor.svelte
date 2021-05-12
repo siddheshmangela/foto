@@ -1,7 +1,7 @@
 <script>
   export let href;
   export let target;
-  export let iconButton;
+  export let iconButton = false;
 </script>
 
 <a

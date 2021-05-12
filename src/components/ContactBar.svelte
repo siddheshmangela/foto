@@ -1,18 +1,17 @@
 <script>
   import Anchor from './Anchor.svelte';
-  import InstagramIcon from './icons/Instagram.svelte';
-  import MailIcon from './icons/Mail.svelte';
+  import socialLinks from '../data/social-links';
+  import iconImports from '../data/icon-imports';
 </script>
 
 <nav>
-  <Anchor href="https://www.instagram.com/sidthecool007" target="_blank">
-    <InstagramIcon />
-    sidthecool007
-  </Anchor>
-  <Anchor href="mailto:sidmangelainc@gmail.com?subject=Foto:" target="_blank">
-    <MailIcon />
-    sidmangelainc@gmail.com
-  </Anchor>
+  {#each socialLinks as socialLink}
+    <Anchor href={socialLink.href} target="_blank">
+      {#await iconImports[socialLink.id]() then module}
+        <svelte:component this={module.default} /> {socialLink.name}
+      {/await}
+    </Anchor>
+  {/each}
 </nav>
 
 <style>
@@ -31,7 +30,7 @@
   }
 
   nav > :global(a) {
-    margin-bottom: var(--unit-2);
+    margin-bottom: var(--unit-3);
   }
 
   @media only screen and (min-width: 1100px) {
@@ -43,7 +42,7 @@
     }
 
     nav > :global(a) {
-      margin-left: var(--unit-2);
+      margin-left: var(--unit-3);
     }
 
     nav > :global(a:first-child) {

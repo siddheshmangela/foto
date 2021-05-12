@@ -1,16 +1,19 @@
 <script>
-  import InstagramIcon from './icons/Instagram.svelte';
   import Anchor from './Anchor.svelte';
+  import socialLinks from '../data/social-links';
+  import iconImports from '../data/icon-imports';
 </script>
 
 <header>
-  <Anchor
-    href="https://www.instagram.com/sidthecool007"
-    target="_blank"
-    iconButton={true}
-  >
-    <InstagramIcon />
-  </Anchor>
+  {#each socialLinks as socialLink}
+    {#if !socialLink.excludeFromHeader}
+      <Anchor href={socialLink.href} target="_blank" iconButton={true}>
+        {#await iconImports[socialLink.id]() then module}
+          <svelte:component this={module.default} />
+        {/await}
+      </Anchor>
+    {/if}
+  {/each}
 </header>
 
 <style>
@@ -21,6 +24,14 @@
     justify-content: center;
     margin-top: var(--unit-3);
     margin-bottom: var(--unit-3);
+  }
+
+  header :global(a) {
+    margin-left: var(--unit-6);
+  }
+
+  header :global(a:first-child) {
+    margin-left: 0;
   }
 
   @media only screen and (min-width: 1100px) {
