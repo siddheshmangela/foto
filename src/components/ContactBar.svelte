@@ -30,7 +30,7 @@
   }
 
   nav > :global(a) {
-    margin-bottom: var(--unit-2);
+    margin-bottom: var(--unit-3);
   }
 
   @media only screen and (min-width: 1100px) {

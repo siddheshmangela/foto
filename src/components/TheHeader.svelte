@@ -27,7 +27,7 @@
   }
 
   header :global(a) {
-    margin-left: var(--unit-2);
+    margin-left: var(--unit-6);
   }
 
   header :global(a:first-child) {
