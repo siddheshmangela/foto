@@ -1,27 +1,18 @@
 <script>
-  import InstagramIcon from './icons/Instagram.svelte';
-  import UnsplashIcon from './icons/Unsplash.svelte';
   import Anchor from './Anchor.svelte';
-
-  const socialLinks = [
-    {
-      id: 'instagram',
-      href: 'https://www.instagram.com/sidthecool007',
-      icon: InstagramIcon,
-    },
-    {
-      id: 'unsplash',
-      href: 'https://unsplash.com/@siddacool',
-      icon: UnsplashIcon,
-    },
-  ];
+  import socialLinks from '../data/social-links';
+  import iconImports from '../data/icon-imports';
 </script>
 
 <header>
   {#each socialLinks as socialLink}
-    <Anchor href={socialLink.href} target="_blank" iconButton={true}>
-      <svelte:component this={socialLink.icon} />
-    </Anchor>
+    {#if !socialLink.excludeFromHeader}
+      <Anchor href={socialLink.href} target="_blank" iconButton={true}>
+        {#await iconImports[socialLink.id]() then module}
+          <svelte:component this={module.default} />
+        {/await}
+      </Anchor>
+    {/if}
   {/each}
 </header>
 
