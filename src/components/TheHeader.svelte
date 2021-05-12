@@ -1,5 +1,6 @@
 <script>
   import InstagramIcon from './icons/Instagram.svelte';
+  import UnsplashIcon from './icons/Unsplash.svelte';
   import Anchor from './Anchor.svelte';
 </script>
 
@@ -11,6 +12,13 @@
   >
     <InstagramIcon />
   </Anchor>
+  <Anchor
+    href="https://unsplash.com/@siddacool"
+    target="_blank"
+    iconButton={true}
+  >
+    <UnsplashIcon />
+  </Anchor>
 </header>
 
 <style>
@@ -21,6 +29,14 @@
     justify-content: center;
     margin-top: var(--unit-3);
     margin-bottom: var(--unit-3);
+  }
+
+  header :global(a) {
+    margin-left: var(--unit-2);
+  }
+
+  header :global(a:first-child) {
+    margin-left: 0;
   }
 
   @media only screen and (min-width: 1100px) {
