@@ -1,4 +1,5 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
+require('dotenv').config();
 
 const IMAGE_CDN = 'https://cdn.statically.io/img/siddheshmangela.github.io';
 const COVER_IMAGE = `${IMAGE_CDN}/foto/images/DSC_0154-tagged.jpg`;
@@ -34,7 +35,7 @@ module.exports = {
     COVER_IMAGE,
   },
   buildOptions: {
-    baseUrl: '/foto',
+    baseUrl: process.env.NODE_ENV == 'test' ? '' : '/foto',
     metaUrlPath: '/dist',
   },
 };
