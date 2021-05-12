@@ -1,16 +1,14 @@
 <script>
   import Anchor from './Anchor.svelte';
   import socialLinks from '../data/social-links';
-  import iconImports from '../data/icon-imports';
+  import IconLoader from './IconLoader.svelte';
 </script>
 
 <header>
   {#each socialLinks as socialLink}
     {#if !socialLink.excludeFromHeader}
       <Anchor href={socialLink.href} target="_blank" iconButton={true}>
-        {#await iconImports[socialLink.id]() then module}
-          <svelte:component this={module.default} />
-        {/await}
+        <IconLoader name={socialLink.id} />
       </Anchor>
     {/if}
   {/each}
